@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/IranPopulationMap/static/css/main.5a2c8955.chunk.css",
-    "main.js": "/IranPopulationMap/static/js/main.3703ce3c.chunk.js",
-    "main.js.map": "/IranPopulationMap/static/js/main.3703ce3c.chunk.js.map",
+    "main.js": "/IranPopulationMap/static/js/main.5f20fe68.chunk.js",
+    "main.js.map": "/IranPopulationMap/static/js/main.5f20fe68.chunk.js.map",
     "runtime-main.js": "/IranPopulationMap/static/js/runtime-main.70ca761a.js",
     "runtime-main.js.map": "/IranPopulationMap/static/js/runtime-main.70ca761a.js.map",
     "static/js/2.64f16a34.chunk.js": "/IranPopulationMap/static/js/2.64f16a34.chunk.js",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.70ca761a.js",
     "static/js/2.64f16a34.chunk.js",
     "static/css/main.5a2c8955.chunk.css",
-    "static/js/main.3703ce3c.chunk.js"
+    "static/js/main.5f20fe68.chunk.js"
   ]
 }
