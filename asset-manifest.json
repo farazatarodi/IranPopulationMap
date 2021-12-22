@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/IranPopulationMap/static/css/main.5a2c8955.chunk.css",
+    "main.js": "/IranPopulationMap/static/js/main.9afa59b6.chunk.js",
+    "main.js.map": "/IranPopulationMap/static/js/main.9afa59b6.chunk.js.map",
+    "runtime-main.js": "/IranPopulationMap/static/js/runtime-main.d5d6da88.js",
+    "runtime-main.js.map": "/IranPopulationMap/static/js/runtime-main.d5d6da88.js.map",
+    "static/js/2.02c23f78.chunk.js": "/IranPopulationMap/static/js/2.02c23f78.chunk.js",
+    "static/js/2.02c23f78.chunk.js.map": "/IranPopulationMap/static/js/2.02c23f78.chunk.js.map",
+    "static/js/3.c698d97c.chunk.js": "/IranPopulationMap/static/js/3.c698d97c.chunk.js",
+    "static/js/3.c698d97c.chunk.js.map": "/IranPopulationMap/static/js/3.c698d97c.chunk.js.map",
+    "index.html": "/IranPopulationMap/index.html",
+    "static/css/main.5a2c8955.chunk.css.map": "/IranPopulationMap/static/css/main.5a2c8955.chunk.css.map",
+    "static/js/2.02c23f78.chunk.js.LICENSE.txt": "/IranPopulationMap/static/js/2.02c23f78.chunk.js.LICENSE.txt",
+    "static/media/down-arrow.f9e8c60f.gif": "/IranPopulationMap/static/media/down-arrow.f9e8c60f.gif",
+    "static/media/index.css": "/IranPopulationMap/static/media/iranyekanwebregular.85048835.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d5d6da88.js",
+    "static/js/2.02c23f78.chunk.js",
+    "static/css/main.5a2c8955.chunk.css",
+    "static/js/main.9afa59b6.chunk.js"
+  ]
+}
