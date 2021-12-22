@@ -38,9 +38,9 @@ const Accordion = ({ title, limSlider, onSelect, id, active }) => {
               }}
               aria-labelledby="range-slider"
             />
-            <div className="min-text bot-text">{limit[0]}</div>
+            <div className="min-text bot-text">{limit[0].toLocaleString()}</div>
             <div className="bot-text">People / نفر</div>
-            <div className="max-text bot-text">{limit[1]}</div>
+            <div className="max-text bot-text">{limit[1].toLocaleString()}</div>
           </div>
         </div>
       )}

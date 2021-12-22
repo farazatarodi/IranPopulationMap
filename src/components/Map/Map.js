@@ -146,10 +146,10 @@ const Map = () => {
     if (!object) {
       return null;
     }
-    const pop = object.pop;
-    const male = object.m;
-    const female = object.f;
-    const family = object.fam;
+    const pop = object.pop.toLocaleString();
+    const male = object.m.toLocaleString();
+    const female = object.f.toLocaleString();
+    const family = object.fam.toLocaleString();
 
     switch (id) {
       case 0:
