@@ -1,14 +1,13 @@
 import Slider from '@material-ui/core/Slider';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { setLimit } from '../../redux/actions/data';
 
-const Accordion = ({
-  title,
-  limSlider,
-  onSelect,
-  id,
-  active,
-  setLimPop,
-  limPop,
-}) => {
+const Accordion = ({ title, limSlider, onSelect, id, active }) => {
+  const dispatch = useDispatch();
+
+  const limit = useSelector((state) => state.dataReducer.limit);
+
   return (
     <div className="accordion-item">
       <div
@@ -32,15 +31,15 @@ const Accordion = ({
             <Slider
               min={limSlider[0]}
               max={limSlider[1]}
-              value={limPop}
+              value={limit}
               onChange={(e, v) => {
-                setLimPop(v);
+                dispatch(setLimit(v));
               }}
               aria-labelledby="range-slider"
             />
-            <div className="min-text bot-text">{limPop[0]}</div>
+            <div className="min-text bot-text">{limit[0]}</div>
             <div className="bot-text">People / نفر</div>
-            <div className="max-text bot-text">{limPop[1]}</div>
+            <div className="max-text bot-text">{limit[1]}</div>
           </div>
         </div>
       )}

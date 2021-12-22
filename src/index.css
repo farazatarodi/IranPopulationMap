@@ -39,10 +39,10 @@ code {
   position: relative;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.text-container h1,
-.text-container h3 {
+.text-container h1 {
   width: 50%;
 }
 

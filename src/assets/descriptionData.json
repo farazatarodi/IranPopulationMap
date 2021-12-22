@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Description",
+    "content1": "The height of the columns represents the population of that area.",
+    "content2": "There are four levels of data available below. By selecting the level and changing the slider you can set the limit of the population.",
+    "content3": "If you hover the cursor over a point of data, a tooltip will give you detailed information about that point.",
+    "content4": "Dataset is from 2016 and is retrieved from the Statistical Center of Iran. However, it may be incomplete due to the lack of official coordinates. The estimated validity of data represented is more than 90%.",
+    "defAct": true,
+    "id": "des-en"
+  },
+  {
+    "title": "توضیحات",
+    "content1": "ارتفاع ستون ها نشان دهنده جمعیت آن منطقه است.",
+    "content2": "چهار سطح داده در قسمت زیر قرار دارد. با انتخاب کردن سطح و تغییر دادن نوار میتوانید محدوده جمعیت را تایین کنید.",
+    "content3": "با رفتن روی هر ستون، اطلاعات دقیق آن منطقه نشان داده می شود.",
+    "content4": "این داده ها مربوط به سال 1395 هستند و از سایت مرکز آمار ایران استخراج شده اند. به دلیل عدم وجود مختصات جغرافیایی دقیق داده ها ممکن است ناقص باشند. تخمین می خورد که اطلاعات بیش از 90% کامل باشند.",
+    "defAct": false,
+    "id": "des-fa"
+  }
+]

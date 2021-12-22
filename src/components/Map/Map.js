@@ -2,8 +2,13 @@ import { StaticMap } from 'react-map-gl';
 import DeckGL from '@deck.gl/react';
 import { AmbientLight, PointLight, LightingEffect } from '@deck.gl/core';
 import { ColumnLayer } from '@deck.gl/layers';
+import { useSelector } from 'react-redux';
 
-const Map = ({ data, maxRadius, limitPopulation, isActive }) => {
+const Map = () => {
+  const { id, coords, limit, radius } = useSelector(
+    (state) => state.dataReducer
+  );
+
   // mapbox parameters
   const token =
     'pk.eyJ1IjoiZmFyYXphdGEiLCJhIjoiY2tvdHcxaTV4MDB5MTJ6bjdzdGhkMzduOSJ9.bzS9EpU16PCr7gA0ZabGyg';
@@ -55,7 +60,7 @@ const Map = ({ data, maxRadius, limitPopulation, isActive }) => {
   });
 
   // function to convert hsl to rgb
-  function HSLToRGB(h, s, l) {
+  const HSLToRGB = (h, s, l) => {
     s /= 100;
     l /= 100;
 
@@ -97,26 +102,22 @@ const Map = ({ data, maxRadius, limitPopulation, isActive }) => {
 
     var output = [r, g, b];
     return output;
-  }
+  };
 
   // deck.dl column layer
   const layers = [
     new ColumnLayer({
       id: 'scatter-plot',
       coverage: 1,
-      data: data,
-      radius: maxRadius * 1000,
+      data: coords,
+      radius: radius * 1000,
       extruded: true,
       elevationScale: 1 / 40,
-      getElevation: (d) =>
-        d.pop < limitPopulation[1] && d.pop > limitPopulation[0] ? d.pop : -1,
+      getElevation: (d) => (d.pop < limit[1] && d.pop > limit[0] ? d.pop : -1),
       getPosition: (d) => d.lon !== '#' && [d.lon, d.lat],
       getFillColor: (d) =>
         HSLToRGB(
-          120 *
-            (1 -
-              (d.pop - limitPopulation[0]) /
-                (limitPopulation[1] - limitPopulation[0])),
+          120 * (1 - (d.pop - limit[0]) / (limit[1] - limit[0])),
           100,
           40
         ),
@@ -125,26 +126,23 @@ const Map = ({ data, maxRadius, limitPopulation, isActive }) => {
       wireframe: true,
       pickable: true,
       updateTriggers: {
-        data,
+        data: coords,
         getElevation: (d) =>
-          d.pop < limitPopulation[1] && d.pop > limitPopulation[0] ? d.pop : -1,
+          d.pop < limit[1] && d.pop > limit[0] ? d.pop : -1,
         getFillColor: (d) =>
           HSLToRGB(
-            120 *
-              (1 -
-                (d.pop - limitPopulation[0]) /
-                  (limitPopulation[1] - limitPopulation[0])),
+            120 * (1 - (d.pop - limit[0]) / (limit[1] - limit[0])),
             100,
             40
           ),
-        getRadius: maxRadius,
+        getRadius: radius,
       },
       controller: true,
     }),
   ];
 
   // tooltip function
-  function getTooltip({ object }) {
+  const getTooltip = ({ object }) => {
     if (!object) {
       return null;
     }
@@ -153,8 +151,25 @@ const Map = ({ data, maxRadius, limitPopulation, isActive }) => {
     const female = object.f;
     const family = object.fam;
 
-    if (isActive[2] === true) {
-      return `\
+    switch (id) {
+      case 0:
+        return `\
+    استان ${object.ostan}
+    ${pop} نفر/People
+    ${male} مرد/Male
+    ${female} زن/Female
+    ${family} خانواده/Family`;
+      case 1:
+        return `\
+    شهرستان ${object.shahrestan}
+    استان ${object.ostan}
+    ${pop} نفر/People
+    ${male} مرد/Male
+    ${female} زن/Female
+    ${family} خانواده/Family`;
+
+      case 2:
+        return `\
     شهر ${object.shahr}
     شهرستان ${object.shahrestan}
     استان ${object.ostan}
@@ -162,23 +177,8 @@ const Map = ({ data, maxRadius, limitPopulation, isActive }) => {
     ${male} مرد/Male
     ${female} زن/Female
     ${family} خانواده/Family`;
-    } else if (isActive[1] === true) {
-      return `\
-    شهرستان ${object.shahrestan}
-    استان ${object.ostan}
-    ${pop} نفر/People
-    ${male} مرد/Male
-    ${female} زن/Female
-    ${family} خانواده/Family`;
-    } else if (isActive[0] === true) {
-      return `\
-    استان ${object.ostan}
-    ${pop} نفر/People
-    ${male} مرد/Male
-    ${female} زن/Female
-    ${family} خانواده/Family`;
-    } else if (isActive[3] === true) {
-      return `\
+      case 3:
+        return `\
     منطقه ${object.district}
     شهر ${object.shahr}
     شهرستان ${object.shahr}
@@ -187,8 +187,10 @@ const Map = ({ data, maxRadius, limitPopulation, isActive }) => {
     ${male} مرد/Male
     ${female} زن/Female
     ${family} خانواده/Family`;
+      default:
+        return null;
     }
-  }
+  };
 
   return (
     <DeckGL
