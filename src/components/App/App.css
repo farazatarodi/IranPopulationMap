@@ -1,0 +1,7 @@
+.watermark {
+  background-color: rgba(0, 0, 0, 0.178);
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  padding: 0.2em;
+}

@@ -4,6 +4,7 @@ import { selectData } from '../../redux/actions/data';
 import Accordion from '../Accordion/Accordion';
 import Description from '../Description/Description';
 import descriptionData from '../../assets/descriptionData.json';
+import './Panel.css';
 
 const Panel = ({ dataSets }) => {
   const dispatch = useDispatch();

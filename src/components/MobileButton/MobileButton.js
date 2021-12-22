@@ -1,4 +1,5 @@
 import dArrow from '../../assets/down-arrow.gif';
+import './MobileButton.css';
 
 const MobileButton = () => {
   // press check for mobile button

@@ -1,0 +1,38 @@
+.panel {
+  background-color: white;
+  position: absolute;
+  padding: 1rem;
+  z-index: 100;
+  overflow-y: auto;
+  top: 100%;
+  transition: top 0.5s;
+  max-height: 45%;
+  margin: 0 0.5em 0 0.5em;
+}
+
+.text-container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.text-container h1 {
+  width: 50%;
+}
+
+.title-farsi,
+.subtitle-farsi {
+  text-align: right;
+}
+
+@media (min-width: 900px) {
+  .panel {
+    width: 20%;
+    right: 2%;
+    top: 2%;
+    max-height: 90%;
+    transition: top 0s;
+    margin: 0;
+  }
+}

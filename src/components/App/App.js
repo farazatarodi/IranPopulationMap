@@ -8,6 +8,7 @@ import MobileButton from '../MobileButton/MobileButton';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { selectData } from '../../redux/actions/data';
+import './App.css';
 
 // main
 export default function App() {

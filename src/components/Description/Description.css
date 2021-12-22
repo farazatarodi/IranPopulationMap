@@ -1,0 +1,36 @@
+.description-item {
+  width: 100%;
+  background-color: rgb(235, 235, 235);
+}
+
+.description-title {
+  cursor: pointer;
+  display: flex;
+  margin: 0 1em 0 1em;
+  font-weight: 600;
+}
+
+.description-title:hover {
+  background-color: rgba(0, 0, 0, 0.055);
+}
+
+.description-title div {
+  padding: 0.5em 0 0.5em 0;
+  border-top: 1px solid rgb(100, 100, 100);
+}
+
+.title {
+  width: 100%;
+}
+
+.description-content {
+  margin: 0 1em 0 0;
+}
+
+#des-fa .description-content {
+  margin: 0 0 0 1em;
+}
+
+#des-fa {
+  direction: rtl;
+}

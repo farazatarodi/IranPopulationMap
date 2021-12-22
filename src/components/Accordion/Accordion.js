@@ -2,6 +2,7 @@ import Slider from '@material-ui/core/Slider';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { setLimit } from '../../redux/actions/data';
+import './Accordion.css';
 
 const Accordion = ({ title, limSlider, onSelect, id, active }) => {
   const dispatch = useDispatch();
