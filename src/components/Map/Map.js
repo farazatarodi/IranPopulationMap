@@ -3,6 +3,7 @@ import DeckGL from '@deck.gl/react';
 import { AmbientLight, PointLight, LightingEffect } from '@deck.gl/core';
 import { ColumnLayer } from '@deck.gl/layers';
 import { useSelector } from 'react-redux';
+import dotenv from 'dotenv';
 
 const Map = () => {
   const { id, coords, limit, radius } = useSelector(
@@ -10,9 +11,9 @@ const Map = () => {
   );
 
   // mapbox parameters
-  const token =
-    'pk.eyJ1IjoiZmFyYXphdGEiLCJhIjoiY2tvdHcxaTV4MDB5MTJ6bjdzdGhkMzduOSJ9.bzS9EpU16PCr7gA0ZabGyg';
-  const style = 'mapbox://styles/farazata/ckotw3907212p18l92zygk52c';
+  dotenv.config();
+  const token = process.env.REACT_APP_TOKEN;
+  const style = process.env.REACT_APP_STYLE;
 
   // initial view settings
   const wHeight = window.innerHeight;
